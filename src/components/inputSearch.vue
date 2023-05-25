@@ -2,7 +2,7 @@
 export default {
     data(){
         return {
-            
+            searchStr: ""
         };
     }
 }
@@ -13,8 +13,8 @@ export default {
             Boolflix
         </h1>
         <div>
-            <input type="text" placeholder="Search Film/Series">
-            <button>Search</button>
+            <input type="text" placeholder="Search Film/Series" v-model="searchStr">
+            <button @click="$emit('performSearch', searchStr)">Search</button>
             <button>Reset</button> 
         </div>  
     </div>
