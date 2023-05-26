@@ -23,15 +23,29 @@ export default {
               },
             })
             .then(response => (this.store.arrFilms = response.data.results));
+
+            axios
+            .get("https://api.themoviedb.org/3/search/tv", {
+              params: {
+                api_key: "5f71ca6846ae9e23b392498470b3c9a1",
+                query: this.store.searchStr,
+              },
+            })
+            .then(response => (this.store.arrSeries = response.data.results));
+        },
+        clearInputField() {
+          this.searchStr="";
         }
     },
     created () {
         this.requestDataFromApi();
+        
     },
 };
 </script>
 <template>
-  <inputSearch @performSearch="requestDataFromApi"/>
+  <inputSearch @performSearch="requestDataFromApi"
+  @clearSearch="clearInputField"/>
   <filmList/>
 </template>
 <style lang="scss">

@@ -1,8 +1,10 @@
 <script>
+import { store } from '../store';
 export default {
     data(){
         return {
-            searchStr: ""
+            store,
+        
         };
     }
 }
@@ -13,9 +15,9 @@ export default {
             Boolflix
         </h1>
         <div>
-            <input type="text" placeholder="Search Film/Series" v-model="searchStr">
-            <button @click="$emit('performSearch', searchStr)">Search</button>
-            <button>Reset</button> 
+            <input type="text" placeholder="Search Film/Series" v-model="store.searchStr">
+            <button @click="$emit('performSearch')">Search</button>
+            <button @click="$emit('clearSearch')">Reset</button>
         </div>  
     </div>
     

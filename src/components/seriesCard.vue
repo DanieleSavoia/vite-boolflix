@@ -1,28 +1,28 @@
 <script>
 export default {
     props: {
-        filmData: Object,
+        seriesData: Object,
     }
 }
 </script>
 <template>
     <div class="flip-card">
-  <div class="flip-card-inner">
+    <div class="flip-card-inner">
     <div class="flip-card-front">
-        <img :src="`https://image.tmdb.org/t/p/w342${filmData.poster_path}`" :alt="filmData.title" style="width:300px;height:400px;">
+        <img :src="`https://image.tmdb.org/t/p/w342${seriesData.poster_path}`" :alt="seriesData.title" style="width:300px;height:400px;">
     </div>
     <div class="flip-card-back">
         <div>
-           titolo: <b>{{ filmData.title }}</b>
+           titolo: <b>{{ seriesData.title }}</b>
         </div> 
         <div >
-           titolo originale: <b>{{ filmData.original_title }}</b>
+           titolo originale: <b>{{ seriesData.original_title }}</b>
         </div>
         <div >
-           voto: <b>{{ filmData.vote_average }}</b>
+           voto: <b>{{ seriesData.vote_average }}</b>
         </div>
         <div >
-           trama: <b>{{ filmData.overview }}</b>
+           trama: <b>{{ seriesData.overview }}</b>
         </div>
     </div>
   </div>
@@ -67,7 +67,7 @@ body {
 }
 
 .flip-card-front {
-  background-color: #ca2727;
+  background-color: #bbb;
   color: black;
 }
 
@@ -77,4 +77,3 @@ body {
   transform: rotateY(180deg);
 }
 </style>
-  
